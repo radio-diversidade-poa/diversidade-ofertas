@@ -1,57 +1,223 @@
 <style>
-/* RESET FORÇADO (GOOGLE SITES FIX) */
-html, body {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  overflow-x: hidden !important;
-  background: #f5f5f5;
-  height: auto !important;
-  min-height: 0 !important;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* REMOVE QUALQUER ESPAÇO DO CONTAINER PRINCIPAL */
-body > div,
-section {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+html, body{
+  margin:0 !important;
+  padding:0 !important;
+  overflow-x:hidden;
+  background:#f5f5f5;
+  font-family:Arial, sans-serif;
 }
 
-/* EVITA ESPAÇO INFERIOR DO ÚLTIMO BLOCO */
-.loja-section:last-of-type {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+.vitrine-geral{
+  width:100%;
+  max-width:100%;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden;
 }
 
-/* REMOVE “ESPAÇO INVISÍVEL” DE DISPLAY BLOCK/INLINE-BLOCK */
-.vitrine-container,
-.vitrine-geral {
-  margin: 0 !important;
-  padding: 0 !important;
-  line-height: 0 !important;
-  font-size: 0 !important;
+/* ===== BLOCOS DAS LOJAS ===== */
+.loja-section{
+  margin-bottom:0;
+  padding-bottom:0;
 }
 
-/* RESTAURA TEXTO DENTRO DOS CARDS */
-.card,
-.card * {
-  line-height: normal !important;
-  font-size: initial !important;
+.loja-section:last-child{
+  margin-bottom:0 !important;
+  padding-bottom:0 !important;
 }
 
-/* CORREÇÃO ESPECÍFICA GOOGLE SITES (GAP DE IFRAME) */
-iframe {
-  display: block !important;
-  border: none !important;
+/* ===== FAIXA / BANNER ===== */
+.loja-topo{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:18px 22px;
+  border-radius:18px;
+  margin-bottom:20px;
+  color:#fff;
+  box-shadow:0 5px 18px rgba(0,0,0,0.12);
 }
 
-/* REMOVE ESPAÇO FINAL DO DOCUMENTO */
-body::after {
-  content: "";
-  display: block;
-  height: 0;
-  margin: 0;
-  padding: 0;
+.logo-loja{
+  width:60px;
+  height:60px;
+  object-fit:contain;
+  background:#fff;
+  border-radius:14px;
+  padding:6px;
+}
+
+.titulo-loja{
+  font-size:28px;
+  font-weight:800;
+  line-height:1.1;
+}
+
+.subtitulo-loja{
+  font-size:14px;
+  opacity:0.95;
+  margin-top:4px;
+}
+
+/* ===== CORES DAS LOJAS ===== */
+.shopee{
+  background:linear-gradient(135deg,#ff6a00,#ff8f1f);
+}
+
+.amazon{
+  background:linear-gradient(135deg,#111111,#2f2f2f);
+}
+
+.mercadolivre{
+  background:linear-gradient(135deg,#ffe600,#ffd000);
+  color:#222;
+}
+
+.magalu{
+  background:linear-gradient(135deg,#0086ff,#00b7ff);
+}
+
+/* ===== GRID DOS PRODUTOS ===== */
+.vitrine-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+  margin-bottom:0;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:#fff;
+  border-radius:18px;
+  padding:14px;
+  border:1px solid #ececec;
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+  transition:0.2s;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+  min-height:370px;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+/* ===== IMAGEM ===== */
+.card img{
+  width:100%;
+  height:170px;
+  object-fit:contain;
+  margin-bottom:10px;
+}
+
+/* ===== TITULO ===== */
+.card h4{
+  font-size:14px;
+  color:#222;
+  line-height:1.3;
+  height:38px;
+  overflow:hidden;
+  margin-bottom:8px;
+}
+
+/* ===== DESCRIÇÃO ===== */
+.descricao{
+  font-size:12px;
+  color:#ff6a00;
+  line-height:1.4;
+  height:52px;
+  overflow:hidden;
+  margin-bottom:10px;
+}
+
+/* ===== TEXTO ===== */
+.info-preco{
+  color:#888;
+  font-size:11px;
+  margin-bottom:12px;
+}
+
+/* ===== BOTÃO ===== */
+.btn-comprar{
+  display:block;
+  width:100%;
+  text-align:center;
+  background:#6a1b9a;
+  color:#fff !important;
+  text-decoration:none;
+  padding:12px;
+  border-radius:40px;
+  font-size:12px;
+  font-weight:700;
+}
+
+/* ===== CATEGORIAS ===== */
+.categorias{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:10px;
+  margin-bottom:0;
+  padding-bottom:0;
+}
+
+.categorias a{
+  text-decoration:none;
+  padding:10px 14px;
+  border-radius:30px;
+  background:#fff;
+  border:1px solid #ddd;
+  color:#333;
+  font-size:12px;
+  font-weight:700;
+  transition:0.2s;
+}
+
+.categorias a:hover{
+  background:#6a1b9a;
+  color:#fff;
+  border-color:#6a1b9a;
+}
+
+/* ===== RESPONSIVO ===== */
+@media(max-width:700px){
+
+  .vitrine-container{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .card{
+    min-height:340px;
+    padding:10px;
+  }
+
+  .card img{
+    height:120px;
+  }
+
+  .titulo-loja{
+    font-size:22px;
+  }
+
+  .logo-loja{
+    width:48px;
+    height:48px;
+  }
+
+  .categorias a{
+    font-size:11px;
+    padding:9px 12px;
+  }
 }
 </style>
 
