@@ -1,19 +1,389 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<style>
 
-<head>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-<meta charset="UTF-8">
+html,
+body{
+  margin:0 !important;
+  padding:0 !important;
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  overflow-x:hidden;
 
-<title>Diversidade de Achadinhos</title>
+  background:#f5f5f5;
 
-<link rel="stylesheet" href="style.css">
+  font-family:Arial,sans-serif;
 
-</head>
+  height:auto !important;
+  min-height:auto !important;
+}
 
-<body>
+iframe{
+  height:auto !important;
+  min-height:auto !important;
+}
+
+.vitrine-geral{
+  width:100%;
+  max-width:100%;
+
+  margin:0 auto !important;
+  padding:0 !important;
+
+  overflow:hidden;
+
+  height:auto !important;
+  min-height:auto !important;
+
+  display:block;
+}
+
+/* ========================= */
+/* SEÇÕES */
+/* ========================= */
+
+.loja-section{
+  margin-bottom:24px;
+
+  height:auto !important;
+  min-height:auto !important;
+}
+
+.loja-section:last-child{
+  margin-bottom:0 !important;
+}
+
+/* ========================= */
+/* TOPO */
+/* ========================= */
+
+.loja-topo{
+  display:flex;
+  align-items:center;
+  gap:15px;
+
+  padding:18px 22px;
+
+  border-radius:18px;
+
+  margin-bottom:20px;
+
+  color:#fff;
+
+  box-shadow:
+  0 5px 18px rgba(0,0,0,0.12);
+}
+
+.logo-loja{
+  width:60px;
+  height:60px;
+
+  object-fit:contain;
+
+  background:#fff;
+
+  border-radius:14px;
+
+  padding:6px;
+
+  flex-shrink:0;
+}
+
+.titulo-loja{
+  font-size:28px;
+  font-weight:800;
+  line-height:1.1;
+}
+
+.subtitulo-loja{
+  font-size:14px;
+  opacity:0.95;
+  margin-top:4px;
+}
+
+/* ========================= */
+/* CORES */
+/* ========================= */
+
+.shopee{
+  background:
+  linear-gradient(135deg,#ff6a00,#ff8f1f);
+}
+
+.amazon{
+  background:
+  linear-gradient(135deg,#111111,#2f2f2f);
+}
+
+.mercadolivre{
+  background:
+  linear-gradient(135deg,#ffe600,#ffd000);
+
+  color:#222;
+}
+
+.magalu{
+  background:
+  linear-gradient(135deg,#0086ff,#00b7ff);
+}
+
+/* ========================= */
+/* GRID */
+/* ========================= */
+
+.vitrine-container{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fill,minmax(200px,1fr));
+
+  gap:18px;
+
+  align-items:stretch;
+
+  width:100%;
+
+  max-width:1400px;
+
+  margin:0 auto;
+
+  height:auto !important;
+  min-height:auto !important;
+}
+
+/* ========================= */
+/* CARD */
+/* ========================= */
+
+.card{
+  background:#fff;
+
+  border-radius:18px;
+
+  padding:14px;
+
+  border:1px solid #ececec;
+
+  box-shadow:
+  0 4px 12px rgba(0,0,0,0.06);
+
+  transition:0.2s;
+
+  display:flex;
+  flex-direction:column;
+
+  min-height:430px;
+
+  overflow:hidden;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+/* ========================= */
+/* IMAGEM */
+/* ========================= */
+
+.card img{
+  width:100%;
+
+  height:170px;
+
+  object-fit:contain;
+
+  background:#fff;
+
+  margin-bottom:12px;
+
+  flex-shrink:0;
+}
+
+/* ========================= */
+/* TITULO */
+/* ========================= */
+
+.card h4{
+  font-size:14px;
+
+  color:#222;
+
+  line-height:1.3;
+
+  height:38px;
+
+  overflow:hidden;
+
+  display:-webkit-box;
+
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+
+  margin-bottom:8px;
+}
+
+/* ========================= */
+/* DESCRIÇÃO */
+/* ========================= */
+
+.descricao{
+  font-size:12px;
+
+  color:#ff6a00;
+
+  line-height:1.4;
+
+  height:52px;
+
+  overflow:hidden;
+
+  display:-webkit-box;
+
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+
+  margin-bottom:10px;
+}
+
+/* ========================= */
+/* PREÇO */
+/* ========================= */
+
+.info-preco{
+  color:#888;
+
+  font-size:11px;
+
+  margin-bottom:12px;
+}
+
+/* ========================= */
+/* BOTÃO */
+/* ========================= */
+
+.btn-comprar{
+  display:block;
+
+  width:100%;
+
+  text-align:center;
+
+  background:#6a1b9a;
+
+  color:#fff !important;
+
+  text-decoration:none;
+
+  padding:12px;
+
+  border-radius:40px;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  margin-top:auto;
+
+  transition:0.2s;
+}
+
+.btn-comprar:hover{
+  opacity:0.92;
+}
+
+/* ========================= */
+/* CATEGORIAS */
+/* ========================= */
+
+.categorias{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-top:16px;
+
+  max-width:1400px;
+
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.categorias a{
+  text-decoration:none;
+
+  padding:10px 14px;
+
+  border-radius:30px;
+
+  background:#fff;
+
+  border:1px solid #ddd;
+
+  color:#333;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  transition:0.2s;
+}
+
+.categorias a:hover{
+  background:#6a1b9a;
+
+  color:#fff;
+
+  border-color:#6a1b9a;
+}
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media(max-width:700px){
+
+  .vitrine-container{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:12px;
+  }
+
+  .card{
+    min-height:390px;
+
+    padding:10px;
+  }
+
+  .card img{
+    height:120px;
+  }
+
+  .titulo-loja{
+    font-size:22px;
+  }
+
+  .logo-loja{
+    width:48px;
+    height:48px;
+  }
+
+  .categorias a{
+    font-size:11px;
+
+    padding:9px 12px;
+  }
+
+}
+
+</style>
 
 <div class="vitrine-geral">
 
@@ -614,5 +984,4 @@
 
 </section>
 
-</body>
-</html>
+</div>
