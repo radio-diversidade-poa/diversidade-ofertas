@@ -7,35 +7,99 @@
 <title>Diversidade de Achadinhos</title>
 
 <style>
-/* ===== RESET TOTAL (GOOGLE SITES FIX) ===== */
+
+/* =========================
+   RESET + GOOGLE SITES FIX
+========================= */
+
 html, body {
   margin: 0 !important;
   padding: 0 !important;
   height: auto !important;
   overflow-x: hidden;
+  font-family: Arial, sans-serif;
 }
 
 * {
   box-sizing: border-box;
 }
 
-/* remove espaços padrão do navegador */
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, p {
   margin: 0;
   padding: 0;
 }
 
-/* evita “buraco invisível” de imagens */
 img {
   display: block;
   max-width: 100%;
 }
 
-/* container principal */
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
+
 .vitrine-geral {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
 }
+
+/* GRID DOS CARDS (ESSENCIAL - ISSO ESTAVA FALTANDO) */
+.vitrine-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  padding: 10px;
+}
+
+/* =========================
+   CARDS FIXOS E PADRÃO
+========================= */
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card h4 {
+  font-size: 14px;
+  padding: 6px;
+}
+
+.card .descricao {
+  font-size: 12px;
+  padding: 0 6px;
+}
+
+.card .info-preco {
+  font-size: 12px;
+  padding: 0 6px;
+}
+
+.btn-comprar {
+  margin-top: auto;
+  display: block;
+  text-align: center;
+  padding: 8px;
+}
+
+/* =========================
+   FIX FINAL GOOGLE SITES
+========================= */
+
+.loja-section {
+  margin: 0;
+  padding: 0;
+}
+
 </style>
 
 </head>
@@ -43,7 +107,6 @@ img {
 <body>
 
 <div class="vitrine-geral">
-
 <!-- ================================================= -->
 <!-- SHOPEE -->
 <!-- ================================================= -->
